@@ -1,10 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 body {
     background-color: #E5E5E5; 
+    box-sizing: border-box;
 }
+
 .fixed-bar {
     width: 100%;
     height: 80px;
@@ -24,11 +27,11 @@ body {
     width: 75px;
 }
 
-.mensages {
+.messages {
     background-color: #E5E5E5;
 }
 
-.mensage {
+.messageline {
     display: flex;
     width: 100vw;
     background-color: #DCDCDC;
@@ -40,10 +43,13 @@ body {
     flex-wrap: wrap;
     line-height: 23px;
     text-justify: middle;
-    word-wrap: break-word;
 }
 
-.complete-mensage{
+.messageline p, strong {
+    word-break: break-all;
+}
+
+.complete-message{
     width: 100vw;
     word-wrap: break-word;
 }
@@ -78,6 +84,7 @@ body {
     width: 80%;
     height: 60px;
     resize: none;
+    line-height: 30px;
 }
 
 .input-text textarea::placeholder {
@@ -109,14 +116,127 @@ body {
     margin: 0 4px;
 }
 
-.text-mensage {
+.text-message {
     margin-left: 2px;
 }
 
-
-
-
-
 .contact-options {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -80vw;
+    background-color: #FFFFFF;
+    z-index: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all .2s linear;
+}
+
+.contact-options h2{
+   margin: 20px 0;
+}
+
+.contact-name{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    align-items: center;
+    margin: 17px;
+}
+
+.contact li{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.contact ion-icon{
+    font-size: 25px;
+    margin-right: 9px;
+}
+
+.shadow {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -80vw;
+    z-index: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    transform: translate(0);
+    transition: all .2s linear;
+}
+
+.show {
+    display: flex;
+    transform: translateX(-80vw);
+    transition: all .2s linear;
+}
+
+.checkmark, .checkmark-contact {
+    color: green;
+    font-size: 10px;
+    display: none;
+}
+
+.selected-contact {
+    display: flex;
+}
+
+.checkmark-visibily {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    padding-top: 15vh;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.user-name, .button-user-name{
+    width: 260px;
+    height: 54px;
+    border: 1px solid rgba(215, 215, 215, 1);
+    font-size: 18px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.button-user-name {
+    width: 109px;
+    height: 45px;
+    background-color: #E7E7E7;
+    color: #696969;
+    border: none;
+    margin-top: 15px;
+}
+
+.button-user-name:hover {
+    transition: all .5s linear;
+    background-color: #e2cd79;
+}
+
+.dont-show-reservad-mesage {
     display: none;
 }

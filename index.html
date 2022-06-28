@@ -6,50 +6,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UOL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./images/icon logo.png">
 </head>
 
 <body>
+    <div class="form">
+        <img src="./images/logo 2.png" alt="logo da marca UOL">
+        <div class="input">
+            <input class="user-name" placeholder="Digite seu nome" type="text">
+            <button onclick="selectUserName()" class="button-user-name">Entrar</button>
+        </div>
+
+    </div>
     <div class="fixed-bar">
         <img src="./images/logo 1.png" alt="logo da marca UOL">
-        <ion-icon name="people"></ion-icon>
+        <ion-icon onclick="showContactOptions()" name="people"></ion-icon>
     </div>
     <div class="messages">
-        <div class="mensage come-into">
-            <span class="time">(09:21:45)</span> <strong class="name">João</strong> <p>entra na sala...</p>
-        </div>
-        <div class="mensage public">
-            <p class="complete-mensage"></p><span class="time">(09:21:45)</span><strong class="name">João</strong>para<strong class="name">Maria:</strong> <p class="text-mensage">Olá, tudo bem?</p></p>
-        </div>
-        <div class="mensage reservad">
-            <p class="complete-mensage"></p><span class="time">(09:21:45)</span><strong class="name">João</strong>reservadamente para<strong class="name">Maria:</strong> <p class="text-mensage">Não muito! Fica dificl ser feliz no desgoverno Bolsonaro!</p></p>
-        </div>
     </div>
     <div class="space"></div>
     <div class="input-text">
-        <textarea name="mensage" placeholder="Escreva aqui..."></textarea>
-        <ion-icon name="paper-plane"></ion-icon>
+        <textarea name="message" id="message-text" placeholder="Escreva aqui..."></textarea>
+        <ion-icon onclick="sendMessage()" name="paper-plane"></ion-icon>
     </div>
+    <div onclick="showContactOptions()" class="shadow"></div>
     <div class="contact-options">
         <h2>Escolha um contato para enviar mensagem:</h2>
         <ul class="contact">
-            <li value="todos">
-                <ion-icon name="people"></ion-icon>
-                <p>Todos</p>
+            <li onclick="choiceContact(this)" value="Todos">
+                <div class="contact-name">
+                    <ion-icon name="people"></ion-icon>
+                    <p>Todos</p>
+                </div>
+                <ion-icon class="checkmark checkmark-contact" name="checkmark-circle"></ion-icon>
             </li>
-            <li>
-                <ion-icon name="person-circle"></ion-icon>
-                <p>Maria</p>
+            <li  onclick="choiceContact(this)">
+                <div class="contact-name">
+                    <ion-icon name="person-circle"></ion-icon>
+                    <p>Maria</p>
+                </div>
+                <ion-icon class="checkmark" name="checkmark-circle"></ion-icon>
             </li>
-            <li>
-                <ion-icon name="person-circle"></ion-icon>
-                <p>João</p>
+            <li  onclick="choiceContact(this)">
+                <div class="contact-name">
+                    <ion-icon name="person-circle"></ion-icon>
+                    <p>João</p>
+                </div>
+                <ion-icon class="checkmark" name="checkmark-circle"></ion-icon>
             </li>
         </ul>
         <h2>Escolha a visibilidade:</h2>
-        <ul class="visibility">
-
+        <ul class="contact">
+            <li onclick="choiceVisibility(this)" class="message">
+                <div class="contact-name">
+                    <ion-icon name="lock-open"></ion-icon>
+                    <p>Público</p>
+                </div>
+                <ion-icon class="checkmark checkmark-visibily" name="checkmark-circle"></ion-icon>
+            </li>
+            <li onclick="choiceVisibility(this)" class="private_message">
+                <div class="contact-name">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <p>Reservadamente</p>
+                </div>
+                <ion-icon class="checkmark" name="checkmark-circle"></ion-icon>
+            </li>
         </ul>
     </div>
 
