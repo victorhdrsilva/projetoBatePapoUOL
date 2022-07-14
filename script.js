@@ -148,6 +148,12 @@ function sendMessage() {
 console.log(objectTextMessage)
  let sandMessageText = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', objectTextMessage)
  sandMessageText.then(deleteTextAreaValue)
+ sandMessageText.catch(resetPage)
+}
+
+function resetPage() {
+    alert("Você foi deslogado por inatividade")
+    window.location.reload()
 }
 
 function deleteTextAreaValue() {

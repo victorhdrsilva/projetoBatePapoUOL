@@ -134,6 +134,7 @@ body {
     box-sizing: border-box;
     text-align: center;
     transition: all .2s linear;
+    overflow-y: auto;
 }
 
 .contact-options h2{
